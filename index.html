@@ -11,7 +11,13 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="site-header">
+  <div class="blobs" aria-hidden="true">
+    <span class="blob blob--1"></span>
+    <span class="blob blob--2"></span>
+    <span class="blob blob--3"></span>
+  </div>
+
+  <header class="site-header glass">
     <a class="logo" href="#top">Школа №42</a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Открыть меню">
       <span></span><span></span><span></span>
@@ -19,17 +25,19 @@
     <nav id="site-nav" class="nav" aria-label="Основная навигация">
       <a href="#about" data-nav>О школе</a>
       <a href="#courses" data-nav>Программы</a>
+      <a href="#life" data-nav>Атмосфера</a>
       <a href="#teachers" data-nav>Преподаватели</a>
-      <a href="#reviews" data-nav>Отзывы</a>
       <a href="#contacts" data-nav>Контакты</a>
     </nav>
   </header>
 
   <main id="top">
     <section class="hero" aria-label="Школа №42">
+      <div class="hero__media" aria-hidden="true"></div>
+      <div class="hero__veil" aria-hidden="true"></div>
       <canvas class="hero__particles" aria-hidden="true"></canvas>
       <div class="hero__blur" aria-hidden="true"></div>
-      <div class="hero__content">
+      <div class="hero__content glass glass--strong">
         <p class="hero__brand">Школа №42</p>
         <h1>Учим так, чтобы хотелось учиться</h1>
         <p class="hero__subtitle">
@@ -41,7 +49,7 @@
     </section>
 
     <section id="about" class="section about reveal">
-      <div class="about__text">
+      <div class="about__text glass">
         <p class="eyebrow">О школе</p>
         <h2>Место, где учиться спокойно и с интересом</h2>
         <p>
@@ -51,7 +59,7 @@
           родителям и занятия, на которые хочется возвращаться.
         </p>
       </div>
-      <figure class="about__photo">
+      <figure class="about__photo glass-frame">
         <img
           src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=1200&q=80"
           alt="Светлый класс с партами и доской"
@@ -69,44 +77,78 @@
       </div>
       <div class="courses__grid">
         <article class="course-card">
-          <div class="course-card__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
-              <path d="M4 19h16M7 16V8l5 3 5-3v8" />
-            </svg>
+          <div class="course-card__media">
+            <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=900&q=80" alt="Математика" loading="lazy" width="900" height="600" />
           </div>
-          <h3>Математика</h3>
-          <p>От базовых тем до олимпиадной логики — с опорой на понимание, а не зубрёжку.</p>
+          <div class="course-card__body glass glass--card">
+            <div class="course-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 19h16M7 16V8l5 3 5-3v8" /></svg>
+            </div>
+            <h3>Математика</h3>
+            <p>От базовых тем до олимпиадной логики — с опорой на понимание.</p>
+          </div>
         </article>
         <article class="course-card">
-          <div class="course-card__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
-              <circle cx="12" cy="12" r="9" />
-              <path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18" />
-            </svg>
+          <div class="course-card__media">
+            <img src="https://images.unsplash.com/photo-1544717297-fa95b6ee9643?auto=format&fit=crop&w=900&q=80" alt="Английский язык" loading="lazy" width="900" height="600" />
           </div>
-          <h3>Английский язык</h3>
-          <p>Разговорная практика, грамматика без страха и уверенность в реальных ситуациях.</p>
+          <div class="course-card__body glass glass--card">
+            <div class="course-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18" /></svg>
+            </div>
+            <h3>Английский язык</h3>
+            <p>Разговорная практика и грамматика без страха ошибок.</p>
+          </div>
         </article>
         <article class="course-card">
-          <div class="course-card__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-              <path d="M14 2v6h6M8 13h8M8 17h5" />
-            </svg>
+          <div class="course-card__media">
+            <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=900&q=80" alt="Подготовка к экзаменам" loading="lazy" width="900" height="600" />
           </div>
-          <h3>Подготовка к экзаменам</h3>
-          <p>ОГЭ и ЕГЭ: план, пробники и разбор ошибок — спокойно и по шагам.</p>
+          <div class="course-card__body glass glass--card">
+            <div class="course-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><path d="M14 2v6h6M8 13h8M8 17h5" /></svg>
+            </div>
+            <h3>Подготовка к экзаменам</h3>
+            <p>ОГЭ и ЕГЭ: план, пробники и разбор ошибок по шагам.</p>
+          </div>
         </article>
         <article class="course-card">
-          <div class="course-card__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
-              <polyline points="16 18 22 12 16 6" />
-              <polyline points="8 6 2 12 8 18" />
-            </svg>
+          <div class="course-card__media">
+            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80" alt="Программирование" loading="lazy" width="900" height="600" />
           </div>
-          <h3>Программирование для детей</h3>
-          <p>Первые проекты, логика и креатив — без скучных лекций «для взрослых».</p>
+          <div class="course-card__body glass glass--card">
+            <div class="course-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" /></svg>
+            </div>
+            <h3>Программирование для детей</h3>
+            <p>Первые проекты, логика и креатив — без скучных лекций.</p>
+          </div>
         </article>
+      </div>
+    </section>
+
+    <section id="life" class="section life reveal">
+      <div class="section__head">
+        <p class="eyebrow">Атмосфера</p>
+        <h2>Как проходят занятия</h2>
+      </div>
+      <div class="life__grid">
+        <figure class="life__item glass-frame life__item--wide">
+          <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1400&q=80" alt="Групповое занятие в классе" loading="lazy" width="1400" height="900" />
+          <figcaption class="glass glass--caption">Небольшие группы и живое обсуждение</figcaption>
+        </figure>
+        <figure class="life__item glass-frame">
+          <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=900&q=80" alt="Ребёнок за учёбой" loading="lazy" width="900" height="700" />
+          <figcaption class="glass glass--caption">Спокойный темп без давления</figcaption>
+        </figure>
+        <figure class="life__item glass-frame">
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80" alt="Совместная работа" loading="lazy" width="900" height="700" />
+          <figcaption class="glass glass--caption">Работа в парах и мини-проектах</figcaption>
+        </figure>
+        <figure class="life__item glass-frame">
+          <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=900&q=80" alt="Класс с доской" loading="lazy" width="900" height="700" />
+          <figcaption class="glass glass--caption">Ясные объяснения у доски</figcaption>
+        </figure>
       </div>
     </section>
 
@@ -116,18 +158,24 @@
         <h2>Преподаватели</h2>
       </div>
       <div class="teachers__grid">
-        <article class="teacher-card">
-          <div class="teacher-card__photo" style="--tone: #d8efe6" aria-hidden="true">АК</div>
+        <article class="teacher-card glass">
+          <div class="teacher-card__photo">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=480&q=80" alt="Анна Ковалёва" loading="lazy" width="480" height="480" />
+          </div>
           <h3>Анна Ковалёва</h3>
           <p>Математика · 9 лет опыта</p>
         </article>
-        <article class="teacher-card">
-          <div class="teacher-card__photo" style="--tone: #e4eef5" aria-hidden="true">МС</div>
+        <article class="teacher-card glass">
+          <div class="teacher-card__photo">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=480&q=80" alt="Михаил Сорокин" loading="lazy" width="480" height="480" />
+          </div>
           <h3>Михаил Сорокин</h3>
           <p>Английский язык · CELTA</p>
         </article>
-        <article class="teacher-card">
-          <div class="teacher-card__photo" style="--tone: #efe8d8" aria-hidden="true">ЕВ</div>
+        <article class="teacher-card glass">
+          <div class="teacher-card__photo">
+            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=480&q=80" alt="Елена Васильева" loading="lazy" width="480" height="480" />
+          </div>
           <h3>Елена Васильева</h3>
           <p>Подготовка к ЕГЭ · русский и обществознание</p>
         </article>
@@ -140,15 +188,15 @@
         <h2>Что говорят родители и ученики</h2>
       </div>
       <div class="reviews__grid">
-        <blockquote class="review-card">
+        <blockquote class="review-card glass">
           <p>«Сын наконец перестал бояться математики. Объясняют спокойно, прогресс виден уже через месяц.»</p>
           <footer>— Ольга, мама ученика 7 класса</footer>
         </blockquote>
-        <blockquote class="review-card">
+        <blockquote class="review-card glass">
           <p>«Готовилась к ЕГЭ по английскому. Пробники, обратная связь и без лишнего стресса.»</p>
           <footer>— Дарья, 11 класс</footer>
         </blockquote>
-        <blockquote class="review-card">
+        <blockquote class="review-card glass">
           <p>«Программирование зашло с первого занятия — ребёнок сам придумывает мини-проекты дома.»</p>
           <footer>— Игорь, папа ученика 5 класса</footer>
         </blockquote>
@@ -161,7 +209,7 @@
         <h2>Запишитесь на пробный урок</h2>
       </div>
       <div class="contacts__layout">
-        <div class="contacts__info">
+        <div class="contacts__info glass">
           <div class="contact-block">
             <h3>Адрес</h3>
             <p>ул. Мира, 8<br />Москва</p>
@@ -179,7 +227,7 @@
             <p><a href="mailto:hello@school42.ru">hello@school42.ru</a></p>
           </div>
         </div>
-        <form class="signup" action="#" method="post">
+        <form class="signup glass glass--strong" action="#" method="post">
           <h3>Пробное занятие</h3>
           <p class="signup__hint">Оставьте контакты — подберём программу и время.</p>
           <label class="field">
